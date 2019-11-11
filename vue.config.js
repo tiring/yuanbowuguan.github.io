@@ -9,9 +9,11 @@ const resolve = dir => path.join(__dirname, dir)
 const webpack = require('webpack')
 
 module.exports = {
-  publicPath: '/',
+  publicPath: IS_PROD ? process.env.VUE_APP_PUBLIC_PATH : './',
   //打包输出文件目录
   outputDir: 'dist',
+  //静态资源打包目录
+  assetsDir:'assets',
   // eslint-loader 是否在保存的时候检查
   lintOnSave: false,
   // sourceMap
