@@ -1,0 +1,135 @@
+        blockquote,
+        body,
+        button,
+        dd,
+        dl,
+        dt,
+        fieldset,
+        form,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        hr,
+        input,
+        legend,
+        li,
+        ol,
+        p,
+        pre,
+        td,
+        textarea,
+        th,
+        ul {
+            margin: 0;
+            padding: 0
+        }
+        
+        body,
+        button,
+        input,
+        select,
+        textarea {
+            font-family: "Arial","Microsoft YaHei","\9ED1\4F53","\5B8B\4F53",sans-serif!important;
+        }
+ 
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%
+        }
+ 
+        address,
+        cite,
+        dfn,
+        em,
+        var {
+            font-style: normal
+        }
+ 
+        code,
+        kbd,
+        pre,
+        samp {
+            font-family: courier new, courier, monospace
+        }
+ 
+        small {
+            font-size: 12px
+        }
+ 
+        ol,
+        ul {
+            list-style: none
+        }
+ 
+        a {
+            text-decoration: none
+        }
+ 
+        a:hover {
+            text-decoration: underline
+        }
+ 
+        sup {
+            vertical-align: text-top
+        }
+ 
+        sub {
+            vertical-align: text-bottom
+        }
+ 
+        legend {
+            color: #000
+        }
+ 
+        fieldset,
+        img {
+            border: 0
+        }
+ 
+        button,
+        input,
+        select,
+        textarea {
+            font-size: 100%
+        }
+ 
+        button {
+            border-radius: 0
+        }
+ 
+        table {
+            border-collapse: collapse;
+            border-spacing: 0
+        }
+        .clearfix:after{/*伪元素是行内元素 正常浏览器清除浮动方法*/
+            content: "";
+            display: block;
+            height: 0;
+            clear:both;
+            visibility: hidden;
+        }
+        .clearfix{
+            *zoom: 1;/*ie6清除浮动的方式 *号只有IE6-IE7执行，其他浏览器不执行*/
+        }
+        .fl{
+            float: left;
+        }
+        .fr{
+            float: right;
+        }
+        .pr{
+            position: relative;
+        }
+        .pf{
+            position: fixed;
+        }
+        .pa{
+            position: absolute;
+        }
