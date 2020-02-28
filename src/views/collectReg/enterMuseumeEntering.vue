@@ -1,6 +1,6 @@
 <template>
   <div class="enterMuseumeEntering">
-    <collectReg @getCollectRegForm="getCollectRegForm" :title="title"></collectReg>
+    <collectReg ref="collectReg" @getCollectRegForm="getCollectRegForm" :title="title"></collectReg>
   </div>
 </template>
 
@@ -28,10 +28,12 @@ export default {
           _message("success", res.data.msg);
           setTimeout(() => {
             this.$router.push("enterMuseumReg");
+            this.$refs.collectReg.setBlState()
           }, 1000);
         } else {
-          console.log(_message);
+      
           _message("error", res.data.msg);
+          this.$refs.collectReg.setBlState()
         }
       });
     }

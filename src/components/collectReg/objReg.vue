@@ -1,5 +1,5 @@
 <template>
-  <div class="collectReg">
+  <div id="collectReg" class="collectReg">
     <div class="collectRegMain">
       <p class="collectRegTitle">{{title}}</p>
       <div class="collectRegFrom">
@@ -82,7 +82,7 @@
               </el-form-item>
             </el-col>
             <el-col :span="24">
-              <el-button @click="submit" type="button ">提交申请</el-button>
+              <el-button :disabled="bl" :class="bl?'submit':''"  @click="submit" type="button ">提交申请</el-button>
             </el-col>
           </el-row>
         </el-form>
@@ -109,6 +109,8 @@ export default {
   },
   data() {
     return {
+      //是否禁用提交
+      bl:false,
       loadName: "李添鑫",
       // 表单字段
       form: {
@@ -163,20 +165,26 @@ export default {
         
     },
     submit() {
+      this.bl  = true
       this.$refs.form.validate(valid => {
         if (valid) {
           this.$emit("getCollectRegForm", this.form);
+          // this.bl = false;
         } else {
           _message("error", "请输入必填信息");
           return false;
         }
       });
+    },
+    // 修改bl状态
+    setBlState(){
+      this.bl  =false;
     }
   }
 };
 </script>
 <style lang="less" scope>
-.collectReg {
+#collectReg {
   min-width: 350px;
   .collectRegMain {
     border: 1px solid #ccc;
@@ -191,8 +199,14 @@ export default {
       .collectRegRow {
         text-align: center;
         margin: 0 auto;
+        .submit{
+          background: #ccc;
+          border: none;
+        }
       }
+      
     }
   }
+  
 }
 </style>

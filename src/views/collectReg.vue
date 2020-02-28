@@ -1,6 +1,6 @@
 <template>
   <div>
-    <collectReg @getCollectRegForm="getCollectRegForm" :title="title"></collectReg>
+    <collectReg ref="collectReg" @getCollectRegForm="getCollectRegForm" :title="title"></collectReg>
   </div>
 </template>
 
@@ -23,16 +23,18 @@ export default {
   },
   methods: {
     getCollectRegForm(data) {
-      console.log(data);
-      
       saveOrUpdate(data).then(res => {
         if (res.data.code == 0) {
           _message("success", res.data.msg);
+          //延迟一秒跳转页面
           setTimeout(() => {
             this.$router.push("collectRegContent");
+            //修改提交按钮状态
+             this.$refs.collectReg.setBlState()
           }, 1000);
         } else {
-          console.log(_message);
+          //修改提交按钮状态
+         this.$refs.collectReg.setBlState()
           _message("error", res.data.msg);
         }
       });

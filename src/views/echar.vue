@@ -43,10 +43,15 @@ export default {
      
       
     })
+
+    myChart1.on("click",function(params){
+      console.log(params);
+      
+    })
     // let myChart = document.getElementById("myChart");
     // let myChart1 = document.getElementById("myChart1");
     // console.log(myChart, myChart1);
-    // this.$echarts.connect([myChart, myChart1]);
+    this.$echarts.connect([myChart, myChart1]);
   },
   methods: {
   
